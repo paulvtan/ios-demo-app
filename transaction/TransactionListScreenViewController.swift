@@ -35,6 +35,16 @@ class TransactionListScreenViewController: UIViewController, UITableViewDelegate
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            destination.transaction = transactions[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
     // Test mock transaction data.
     func createArray() -> [Transaction] {
         var transactions: [Transaction] = []

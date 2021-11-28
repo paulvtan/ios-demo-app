@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8563B6D27533579006B1E69 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8563B6C27533579006B1E69 /* TransactionTableViewCell.swift */; };
+		A8563B7127538E6E006B1E69 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8563B7027538E6E006B1E69 /* DetailViewController.swift */; };
 		A88965D32751C503004607E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88965D22751C503004607E3 /* AppDelegate.swift */; };
 		A88965D52751C503004607E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88965D42751C503004607E3 /* SceneDelegate.swift */; };
 		A88965DA2751C503004607E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88965D82751C503004607E3 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		A8563B6C27533579006B1E69 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		A8563B7027538E6E006B1E69 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A88965CF2751C503004607E3 /* transaction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = transaction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88965D22751C503004607E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A88965D42751C503004607E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A88965D42751C503004607E3 /* SceneDelegate.swift */,
 				A88966022751C70F004607E3 /* TransactionListScreenViewController.swift */,
 				A88965D82751C503004607E3 /* Main.storyboard */,
+				A8563B7027538E6E006B1E69 /* DetailViewController.swift */,
 				A8563B6C27533579006B1E69 /* TransactionTableViewCell.swift */,
 				A88965DB2751C50A004607E3 /* Assets.xcassets */,
 				A88965DD2751C50A004607E3 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				A88966032751C70F004607E3 /* TransactionListScreenViewController.swift in Sources */,
 				A88965D32751C503004607E3 /* AppDelegate.swift in Sources */,
+				A8563B7127538E6E006B1E69 /* DetailViewController.swift in Sources */,
 				A8563B6D27533579006B1E69 /* TransactionTableViewCell.swift in Sources */,
 				A88965D52751C503004607E3 /* SceneDelegate.swift in Sources */,
 			);
