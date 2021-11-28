@@ -48,8 +48,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="idLabel" destination="Pid-cA-hfv" id="Z1g-YB-alQ"/>
                                             <outlet property="summaryLabel" destination="Xxo-FW-IFj" id="Qaf-nu-6iC"/>
-                                            <outlet property="transactionDateLabel" destination="Pid-cA-hfv" id="gKB-LW-Tbu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -57,8 +57,6 @@ class TransactionListScreenViewController: UIViewController, UITableViewDelegate
                 DispatchQueue.main.async {
                     completed()
                 }
-                print(data!)
-                print("Success")
             } catch {
                 print("JSON Error")
             }

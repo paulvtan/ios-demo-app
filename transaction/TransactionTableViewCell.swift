@@ -9,11 +9,12 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var transactionDateLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     
     func setTransaction(transaction: Transaction) {
-        transactionDateLabel.text = transaction.transactionDate
+        idLabel.text = transaction.id
         summaryLabel.text = transaction.summary
     }
+    
 }
