@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransactionListScreenViewController: UIViewController {
+class TransactionListScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -15,25 +15,13 @@ class TransactionListScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transactions = createArray()
+        fetchJSON {
+            self.tableView.reloadData()
+        }
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    func createArray() -> [Transaction] {
-        var transactions: [Transaction] = []
-        
-        let transaction1 = Transaction(id: "1", transactionDate: "28-11-2021", summary: "First transaction", debit: 20, credit: 200)
-        let transaction2 = Transaction(id: "2", transactionDate: "30-12-2021", summary: "Second transaction", debit: 10, credit: 250)
-        
-        transactions.append(transaction1)
-        transactions.append(transaction2)
-        
-        return transactions
-    }
-}
-
-extension TransactionListScreenViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transactions.count
     }
@@ -46,7 +34,38 @@ extension TransactionListScreenViewController: UITableViewDataSource, UITableVie
         
         return cell
     }
+    
+    // Test mock transaction data.
+    func createArray() -> [Transaction] {
+        var transactions: [Transaction] = []
+        let transaction1 = Transaction(id: "1", transactionDate: "28-11-2021", summary: "First transaction", debit: 20, credit: 200)
+        let transaction2 = Transaction(id: "2", transactionDate: "30-12-2021", summary: "Second transaction", debit: 10, credit: 250)
+        transactions.append(transaction1)
+        transactions.append(transaction2)
+        return transactions
+    }
+    
+    func fetchJSON(completed: @escaping () -> ()) {
+        let DomainURL = "https://60220907ae8f8700177dee68.mockapi.io/api/v1/"
+        let urlString = DomainURL + "transactions/"
+        
+        let url = URL(string: urlString)
+        print(urlString)
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            do {
+                self.transactions = try JSONDecoder().decode([Transaction].self, from: data!)
+                DispatchQueue.main.async {
+                    completed()
+                }
+                print(data!)
+                print("Success")
+            } catch {
+                print("JSON Error")
+            }
+        }.resume()
+    }
 }
+
 
 class Transaction: Codable {
     
@@ -72,5 +91,4 @@ class Transaction: Codable {
         self.debit = debit
         self.credit = credit
     }
-    
 }
